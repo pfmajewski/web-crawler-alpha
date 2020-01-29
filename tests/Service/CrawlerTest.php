@@ -48,14 +48,14 @@ class CrawlerTest extends TestCase
                 ),
                 Option::create(
                     'Option 2000 Mins',
-                    'Up to 2000 minutes talk time per year including 420 SMS (5p / minute and 4p / SMS thereafter)',
+                    'Up to 2000 minutes talk time per year  including 420 SMS (5p / minute and 4p / SMS thereafter)',
                     '£108.00 (inc. VAT) Per Year',
                     'Save £12 on the monthly price',
                     10800
                 ),
                 Option::create(
                     'Option 3600 Mins',
-                    'Up to 3600 minutes talk time per year including 480 SMS (5p / minute and 4p / SMS thereafter)',
+                    'Up to 3600 minutes talk time per year  including 480 SMS (5p / minute and 4p / SMS thereafter)',
                     '£174.00 (inc. VAT) Per Year',
                     'Save £18 on the monthly price',
                     17400
