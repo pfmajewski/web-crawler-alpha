@@ -5,7 +5,7 @@ namespace App\Model;
 /**
  * Class Option
  */
-class Option
+class Option implements \JsonSerializable
 {
     /**
      * @var string
@@ -42,7 +42,7 @@ class Option
      *
      * @return Option
      */
-    static public function create(
+    public static function create(
         string $optionTitle,
         string $description,
         string $price,
@@ -58,5 +58,37 @@ class Option
         $option->yearlyCost = $yearlyCost;
 
         return $option;
+    }
+
+    /**
+     * Used as sorting callback function
+     *
+     * @param Option $a
+     * @param Option $b
+     *
+     * @return int
+     */
+    public static function sortByYearlyCostDescending(Option $a, Option $b): int
+    {
+        if ($a->yearlyCost == $b->yearlyCost) {
+            return 0;
+        } elseif ($a->yearlyCost > $b->yearlyCost) {
+            return -1;
+        } else {
+            return 1;
+        }
+    }
+
+    /**
+     * @return array
+     */
+    public function jsonSerialize(): array
+    {
+        return [
+            'option title' => $this->optionTitle,
+            'description' => $this->description,
+            'price' => $this->price,
+            'discount' => $this->discount,
+        ];
     }
 }
