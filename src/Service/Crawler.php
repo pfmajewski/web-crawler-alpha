@@ -55,7 +55,7 @@ class Crawler
      */
     private function stripTags(string $html): string
     {
-        return trim(strip_tags(preg_replace('/<br {0,}\/?>/i', ' ', $html)));
+        return trim(preg_replace('/ {1,}/', ' ', strip_tags(preg_replace('/<br {0,}\/?>/i', ' ', $html))));
     }
 
     /**
